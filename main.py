@@ -8,10 +8,9 @@ def main():
     linked_list.append(3)
     linked_list.delete_first()
     linked_list.delete_first()
-    linked_list.delete_last()
-    linked_list.delete_last()
     linked_list.print()
-    print("hello")
+    print("reverse")
+    linked_list.reverse()
 
 if __name__ == "__main__":
     main()
