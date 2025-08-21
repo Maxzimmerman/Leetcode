@@ -11,6 +11,7 @@ def main():
     linked_list.print()
     print("reverse")
     linked_list.reverse()
+    linked_list.middle()
 
 if __name__ == "__main__":
     main()

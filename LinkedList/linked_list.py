@@ -42,6 +42,31 @@ class LinkedList:
             curr = temp
         self.head = prev
 
+    def transform_to_cicle(self):
+        new_node = Node()
+        new_node.next = self.head
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+
+    def is_cicle(self):
+        fast = self.head.next
+        slow = self.head
+        while fast and fast.next:
+            if fast == slow:
+                return True
+            fast = fast.next.next
+            slow = slow.next
+        return False
+
+    def middle(self):
+        slow, fast = self.head, self.head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        print(f"middle {slow.val}")
+
     def print(self):
         current = self.head
         while current:
