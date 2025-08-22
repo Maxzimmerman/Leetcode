@@ -6,12 +6,13 @@ def main():
     linked_list.append(1)
     linked_list.append(2)
     linked_list.append(3)
-    linked_list.delete_first()
-    linked_list.delete_first()
+
+    linked_list2 = LinkedList()
+    linked_list2.append(2)
+    linked_list2.append(10)
+
+    linked_list.merge(linked_list2.head)
     linked_list.print()
-    print("reverse")
-    linked_list.reverse()
-    linked_list.middle()
 
 if __name__ == "__main__":
     main()

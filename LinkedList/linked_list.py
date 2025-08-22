@@ -67,6 +67,20 @@ class LinkedList:
             slow = slow.next
         print(f"middle {slow.val}")
 
+    def merge(self, list1):
+        dummy = node = Node()
+        temp = self.head
+        while list1 and temp:
+            if list1.val < temp.val:
+                node.next = list1
+                list1 = list1.next
+            else:
+                node.next = temp
+                temp = temp.next
+            node = node.next
+        node.next = temp if temp else list1
+        self.head = dummy.next
+
     def print(self):
         current = self.head
         while current:
