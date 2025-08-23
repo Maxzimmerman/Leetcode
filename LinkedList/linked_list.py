@@ -81,6 +81,34 @@ class LinkedList:
         node.next = temp if temp else list1
         self.head = dummy.next
 
+    def is_palindrom(self):
+        # Idea: split list in half and reverse the second one
+        # Now if its a palindrom both lists should be the exact same
+
+        # Get the middle one
+        fast = self.head
+        slow = self.head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        
+        # Reverse the second half
+        prev = None
+        while slow:
+            nxt = slow.next
+            slow.next = prev
+            prev = slow
+            slow = nxt
+
+        # Check if the both sides are the same
+        left, right = self.head, prev
+        while right:
+            if left.val != right.val:
+                return False
+            left = left.next
+            right = right.next
+        return True
+
     def print(self):
         current = self.head
         while current:
